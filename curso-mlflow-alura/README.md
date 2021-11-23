@@ -1,5 +1,7 @@
 # MLfLow with Python
 
+Based on [MLflow: Gestão do ciclo de vidas de modelos de ML](https://cursos.alura.com.br/course/mlflow-gestao-ciclo-vidas-modelos-ml) by Alura.
+
 ## First Steps
 - create environment
 - `pip install mlflow`
