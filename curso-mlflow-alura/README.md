@@ -1,4 +1,4 @@
-# MLFLow with Python
+# MLfLow with Python
 
 ## First Steps
 - create environment
@@ -13,3 +13,5 @@
 
 ## Model
 - Notebook: [`notebook.ipynb`](https://github.com/diascarolina/curso-mlflow/curso-mlflow/notebooks/model_training.ipynb)
+
+To be finished...
