@@ -1,11 +1,66 @@
+@file:Suppress("SpellCheckingInspection")
+
 fun main() {
     println("Bem-vindo ao Bytebank")
 
+    val contaAlex = Conta()
+    contaAlex.titular = "Alex"
+    contaAlex.numero = 1000
+    contaAlex.saldo = 200.0
+
+    println(contaAlex.titular)
+    println(contaAlex.numero)
+    println(contaAlex.saldo)
+
+    val contaFran = Conta()
+    contaFran.titular = "Fran"
+    contaFran.numero - 1001
+    contaFran.saldo = 300.0
+
+    println(contaFran.titular)
+    println(contaFran.numero)
+    println(contaFran.saldo)
+
+    println("Depositando na conta do Alex")
+    deposita(contaAlex, 50.0)
+    println(contaAlex.saldo)
+}
+
+fun deposita(conta: Conta, valor: Double) {
+    conta.saldo += valor
+}
+
+class Conta {
+    var titular = ""
+    var numero = 0
+    var saldo = 0.0
+}
+
+fun testaCopiasEReferencias() {
+    val numeroX = 10
+    var numeroY = numeroX
+    numeroY++
+
+    println("Número X = $numeroX \t Número Y = $numeroY")
+
+    val contaJoao = Conta()
+    contaJoao.titular = "João"
+    val contaMaria = contaJoao
+    contaMaria.titular = "Maria"
+
+    println("Titular conta joao: ${contaJoao.titular}")
+    println("Titular conta maria: ${contaMaria.titular}")
+
+    println(contaJoao)
+    println(contaMaria)
+}
+
+fun testaLacos() {
     var i = 0
     while (i < 5){
         val titular: String = "Alex $i"
         val numeroConta: Int = 1000 + i
-        var saldo: Double = i + 10.0
+        val saldo: Double = i + 10.0
 
         println("Titular: $titular")
         println("Número da Conta: $numeroConta")
@@ -14,23 +69,20 @@ fun main() {
         i++
     }
 
-//    for (i in 5 downTo 1) {
-//
-//        if (i == 4) {
-//            continue
-//        }
-//        val titular: String = "Alex $i"
-//        val numeroConta: Int = 1000 + i
-//        var saldo: Double = i + 10.0
-//
-//        println("Titular: $titular")
-//        println("Número da Conta: $numeroConta")
-//        println("Saldo: $saldo")
-//        println()
-//
-////    testaCondicoes(saldo)
-//
-//    }
+    for (j: Int in 5 downTo 1) {
+
+        if (j == 4) {
+            continue
+        }
+        val titular: String = "Alex $j"
+        val numeroConta: Int = 1000 + j
+        val saldo: Double = j + 10.0
+
+        println("Titular: $titular")
+        println("Número da Conta: $numeroConta")
+        println("Saldo: $saldo")
+        println()
+}
 }
 
 fun testaCondicoes(saldo: Double) {
